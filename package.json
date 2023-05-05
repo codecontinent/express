@@ -48,8 +48,8 @@
     "testEnvironment": "node"
   },
   "lint-staged": {
-    "**/*.(js,cjs,mjs,json)": "yarn eslint .",
-    "**/*.(js,json,hbs,html,cjs,mjs)": "yarn prettier . -w"
+    "**/*.{js,cjs,mjs}": "yarn eslint .",
+    "**/*.{js,json,hbs,html,cjs,mjs}": "yarn prettier . -w"
   },
   "keywords": [
     "express",
