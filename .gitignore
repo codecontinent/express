@@ -1,0 +1,31 @@
+# nodejs environment
+node_modules/
+npm-debug.log
+package-lock.json
+
+# production/builds
+dist/
+build/
+
+# logs
+*.log
+*.logs
+
+# hooks
+.husky/*
+!.husky/pre-commit
+!.husky/post-commit
+!.husky/pre-push
+!.husky/post-push
+
+# others & misc.
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+.DS_Store
+.exe
+.ini
+*.env
+*.env.*
+!.env.sample
+!.env.example
