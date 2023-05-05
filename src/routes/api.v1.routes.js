@@ -22,7 +22,7 @@ apiRouter.use('*', (req, res) => {
   const resObj = createResponse({
     reqUrl: req.baseUrl,
     message: 'HTTP error 404',
-    err: { message: 'API endpoint couldn\'t be found.' },
+    err: { message: "API endpoint couldn't be found." },
     code: 404,
   });
   res.status(404).json(resObj);

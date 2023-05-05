@@ -1,7 +1,6 @@
-function responseBuilder({
-  reqUrl, message, data, code, err,
-}) {
+function responseBuilder(obj) {
   const response = {};
+  const { reqUrl, message, data, code, err } = obj;
 
   if (!reqUrl) throw new Error('Request URL is required.');
   response.reqUrl = reqUrl;
@@ -11,7 +10,5 @@ function responseBuilder({
   response.statusCode = code || 200;
   return response;
 }
-
-// const createResponse = (obj) => responseBuilder(obj);
 
 export default responseBuilder;

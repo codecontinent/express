@@ -6,11 +6,12 @@
     "node": ">=16.x"
   },
   "scripts": {
-    "test": "cross-env NODE_ENV=test jest",
-    "dev": "nodemon --exec babel-node server.js",
-    "start": "node dist/server.js",
+    "test": "cross-env NODE_ENV=test jest --watch",
+    "dev": "cross-env NODE_ENV=development nodemon --exec babel-node src/server.js",
+    "start:prod": "cross-env NODE_ENV=production node dist/server.js",
     "prebuild": "rimraf dist",
-    "build": "npx babel src --out-dir dist"
+    "build": "cross-env NODE_ENV=production npx babel src --out-dir dist; cp -r src/views dist/",
+    "start": "cross-env NODE_ENV=production yarn babel-node src/server.js"
   },
   "repository": "git@github.com:codecontinent/expressjs.git",
   "author": "Mahabub Alam <mahabubx7@gmail.com>",
@@ -48,7 +49,7 @@
     "testEnvironment": "node"
   },
   "lint-staged": {
-    "**/*.{js,cjs,mjs}": "yarn eslint .",
+    "**/*.{js,cjs,mjs}": "yarn eslint src",
     "**/*.{js,json,hbs,html,cjs,mjs}": "yarn prettier . -w"
   },
   "keywords": [

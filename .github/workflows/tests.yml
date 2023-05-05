@@ -3,8 +3,8 @@ name: Tests
 on:
   push:
     branches:
-      - "main"
-      - "dev"
+      - 'main'
+      - 'dev'
 
 env:
   FORCE_COLOR: 1

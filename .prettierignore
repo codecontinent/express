@@ -3,3 +3,5 @@ node_modules/
 LICENSE
 *-lock.json
 yarn.lock
+dist/
+build/

@@ -28,7 +28,7 @@ router.use('*', (req, res) => {
     title: 'HTTP error [404]',
     req_url: req.baseUrl,
     layout: 'layouts/page',
-    status: 'route couldn\'t be found.',
+    status: "route couldn't be found.",
   });
 });
 

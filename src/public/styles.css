@@ -12,7 +12,6 @@ h1 {
   text-align: center;
 }
 
-
 code {
   background-color: rgba(128, 128, 128, 0.05);
   font-size: 1rem;
@@ -20,7 +19,9 @@ code {
   padding: 2px 4px;
 }
 
-a { text-decoration: none; }
+a {
+  text-decoration: none;
+}
 
 .btn-link {
   display: inline-block;
@@ -40,9 +41,13 @@ a { text-decoration: none; }
   transform: translateY(1px);
 }
 
-.txt-cap { text-transform: capitalize; }
+.txt-cap {
+  text-transform: capitalize;
+}
 
-.txt-err { color: #e53a3a; }
+.txt-err {
+  color: #e53a3a;
+}
 
 .default-page {
   display: flex;
@@ -68,7 +73,6 @@ a { text-decoration: none; }
   border-radius: 4px;
   padding: 1.5rem 1rem;
 }
-
 
 @media screen and (max-width: 1280px) {
   .default-page,
