@@ -1,5 +1,11 @@
 {
-  "cSpell.words": ["dotenv", "middlewares", "rimraff", "supertest"],
+  "cSpell.words": [
+    "dotenv",
+    "linebreak",
+    "middlewares",
+    "rimraff",
+    "supertest"
+  ],
   "editor.formatOnSave": true,
   "editor.formatOnPaste": true,
   "prettier.configPath": ".prettierrc.json"

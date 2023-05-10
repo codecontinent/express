@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-/* eslint-disable max-len */
 /* eslint-disable implicit-arrow-linebreak */
 import { createResponse } from '../helpers';
 
