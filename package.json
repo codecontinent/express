@@ -30,7 +30,8 @@
     "express-hbs": "^2.4.0",
     "hbs": "^4.2.0",
     "http-terminator": "^3.2.0",
-    "mongoose": "^7.1.0"
+    "mongoose": "^7.1.0",
+    "morgan": "^1.10.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.21.5",

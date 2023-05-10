@@ -1,8 +1,9 @@
 import path from 'path';
 import express from 'express';
 import hbs from 'express-hbs';
+import morgan from 'morgan';
 import router from './routes';
-import { corsConfig } from './configs';
+import { corsConfig, vars } from './configs';
 import { errorHandlers } from './middlewares';
 
 const app = express();
@@ -16,6 +17,7 @@ const app = express();
 app.use(express.json()); // body-parser
 app.use('/static', express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
+if (vars.mode !== 'production') app.use(morgan('short'));
 app.use(router); // application route-handler
 app.use(corsConfig); // CORS
 app.set('view engine', 'hbs'); // template engine
