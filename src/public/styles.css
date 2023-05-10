@@ -49,6 +49,24 @@ a {
   color: #e53a3a;
 }
 
+.txt-ok {
+  background-color: #41844f;
+  color: white;
+  padding: 0.2rem 0.3rem;
+  font-weight: 500;
+  border-radius: 0.15rem;
+}
+
+.info-health {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin-left: 2rem;
+  padding-left: 1rem;
+  border-left: 4px solid #df6705;
+  font-size: 14px;
+}
+
 .default-page {
   display: flex;
   flex-direction: column;

@@ -1,3 +1,4 @@
+import { createHttpTerminator } from 'http-terminator';
 import app from './app';
 import { vars, db } from './configs';
 
@@ -10,7 +11,7 @@ import { vars, db } from './configs';
 
 const port = vars.port || 4000;
 
-app.listen(port, (err) => {
+const server = app.listen(port, (err) => {
   db.connectMongoDB(); // connecting database
 
   if (err) console.log(`😞 Server Error! ${err}`);
@@ -19,4 +20,11 @@ app.listen(port, (err) => {
       `🚀 Express.js server is up & running.\nhttp://localhost:${port}/`,
     );
   }
+});
+
+// graceful shutdown/terminate your HTTP server
+process.on('SIGTERM', async () => {
+  console.info('SIGTERM signal received: closing HTTP server');
+  const httpTerminator = createHttpTerminator({ server });
+  await httpTerminator.terminate();
 });
