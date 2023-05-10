@@ -1,5 +1,5 @@
 import app from './app';
-import { vars } from './configs';
+import { vars, db } from './configs';
 
 /** ---------------------------*
  * @HttpServer will by node.js
@@ -10,7 +10,9 @@ import { vars } from './configs';
 
 const port = vars.port || 4000;
 
-app.listen(port, (err) => {
+db.connectMongoDB(); // connecting database
+
+app.listen(port, async (err) => {
   if (err) console.log(`😞 Server Error! ${err}`);
   else {
     console.log(

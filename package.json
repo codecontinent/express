@@ -8,18 +8,20 @@
   "scripts": {
     "test": "cross-env NODE_ENV=test jest --watch",
     "dev": "cross-env NODE_ENV=development nodemon --exec babel-node src/server.js",
-    "start:prod": "cross-env NODE_ENV=production node dist/server.js",
-    "prebuild": "rimraf dist",
+    "start:prod": "node dist/server.js",
+    "prebuild": "yarn cleanup",
+    "cleanup": "rimraf dist",
+    "clean:all": "yarn cleanup; rimraf node_modules; rimraf *lock*",
     "build": "cross-env NODE_ENV=production npx babel src --out-dir dist; cp -r src/views dist/",
     "start": "cross-env NODE_ENV=production yarn babel-node src/server.js"
   },
-  "repository": "git@github.com:codecontinent/expressjs.git",
-  "author": "Mahabub Alam <mahabubx7@gmail.com>",
+  "repository": "git@github.com:codecontinent/express.git",
+  "author": "CodeContinent <codecontinent@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/codecontinent/expressjs/issues"
+    "url": "https://github.com/codecontinent/express/issues"
   },
-  "homepage": "https://github.com/codecontinent/expressjs",
+  "homepage": "https://github.com/codecontinent/express",
   "dependencies": {
     "cors": "^2.8.5",
     "cross-env": "^7.0.3",
