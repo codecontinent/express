@@ -10,9 +10,9 @@ import { vars, db } from './configs';
 
 const port = vars.port || 4000;
 
-db.connectMongoDB(); // connecting database
+app.listen(port, (err) => {
+  db.connectMongoDB(); // connecting database
 
-app.listen(port, async (err) => {
   if (err) console.log(`😞 Server Error! ${err}`);
   else {
     console.log(

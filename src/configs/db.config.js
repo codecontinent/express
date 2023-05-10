@@ -8,7 +8,7 @@ export async function connectMongoDB() {
       console.log('\nDatabase [MongoDB] connection is established!');
     });
   } catch (err) {
-    throw new Error(`${JSON.stringify(err)}`);
+    console.error(err);
   }
 }
 

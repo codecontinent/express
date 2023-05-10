@@ -24,7 +24,7 @@ router.get('/', (_, res) => {
 
 // @Lock: should be at last :: Router/route-404
 router.use('*', (req, res) => {
-  res.status(404).render('error-404', {
+  res.status(404).render('error', {
     title: 'HTTP error [404]',
     req_url: req.baseUrl,
     layout: 'layouts/page',

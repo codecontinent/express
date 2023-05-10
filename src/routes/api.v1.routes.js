@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import { createResponse } from '../helpers';
+import { errorHandlers } from '../middlewares';
 
 const apiRouter = Router();
 
@@ -27,5 +28,7 @@ apiRouter.use('*', (req, res) => {
   });
   res.status(404).json(resObj);
 });
+
+apiRouter.use(errorHandlers.APIErrorHandler); // API-error-handler
 
 export default apiRouter;
