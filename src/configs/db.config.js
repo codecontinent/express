@@ -1,4 +1,4 @@
-import { connect } from 'mongoose';
+import { connect, connection } from 'mongoose';
 import vars from './vars.config';
 
 export async function connectMongoDB() {
@@ -10,6 +10,21 @@ export async function connectMongoDB() {
   } catch (err) {
     console.error(err);
   }
+}
+
+/* -------------------------------------------*
+ * @TDD Database connection only for tests
+ * @Jest Testing with a Test Database
+ * @returns an object with two functions
+ *-------------------------------------------*/
+export async function connectMongoForTest() {
+  return {
+    connect: async () => await connect(vars.tddDBUrl),
+    close: async () => {
+      await connection.dropDatabase();
+      await connection.close();
+    },
+  };
 }
 
 export async function connectDB() {

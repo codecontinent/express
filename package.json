@@ -50,7 +50,10 @@
     "supertest": "^6.3.3"
   },
   "jest": {
-    "testEnvironment": "node"
+    "testEnvironment": "node",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
   },
   "lint-staged": {
     "**/*.{js,cjs,mjs}": "yarn eslint src",

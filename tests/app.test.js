@@ -1,7 +1,7 @@
 import http from 'supertest';
 import app from '../src/app';
 
-describe('Boot the server', () => {
+describe('Tests for app()', () => {
   it('should spin the server with HTTP:200', async () => {
     const response = await http(app).get('/');
     expect(response.statusCode).toBe(200);
