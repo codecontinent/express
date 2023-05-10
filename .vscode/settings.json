@@ -4,6 +4,7 @@
     "healthcheck",
     "linebreak",
     "middlewares",
+    "nodechecker",
     "rimraff",
     "supertest"
   ],
