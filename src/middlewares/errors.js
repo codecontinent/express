@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-/* eslint-disable implicit-arrow-linebreak */
 import { createResponse } from '../helpers';
 
 export const globalErrorHandler = (error, _, response, __) =>

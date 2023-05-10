@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import { createResponse } from '../helpers';
 import { errorHandlers } from '../middlewares';
+import { todoAPI } from '../services';
 
 const apiRouter = Router();
 
@@ -9,6 +10,10 @@ const apiRouter = Router();
  * @API routes handler
  * @Registerer of APIs
  *----------------------------------*/
+
+/// --------------------------------///
+apiRouter.use('/todo', todoAPI);
+/// --------------------------------///
 
 apiRouter.get('/', (req, res) => {
   const resObj = createResponse({

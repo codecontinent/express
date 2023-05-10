@@ -12,6 +12,11 @@
   },
   "ignorePatterns": ["./dist", "./node_modules"],
   "rules": {
-    "object-curly-newline": "off"
+    "no-console": "off",
+    "object-curly-newline": "off",
+    "no-underscore-dangle": "off",
+    "no-return-await": "off",
+    "implicit-arrow-linebreak": "off",
+    "import/prefer-default-export": "warn"
   }
 }
