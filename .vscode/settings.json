@@ -1,0 +1,16 @@
+{
+  "cSpell.words": [
+    "Autogen",
+    "dotenv",
+    "gendoc",
+    "healthcheck",
+    "linebreak",
+    "middlewares",
+    "nodechecker",
+    "rimraff",
+    "supertest"
+  ],
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "prettier.configPath": ".prettierrc.json"
+}
