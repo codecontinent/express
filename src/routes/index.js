@@ -23,7 +23,7 @@ router.get('/', (_, res) => {
   });
 });
 
-router.get('/healthcheck', (req, res) => {
+router.get('/healthcheck', (_, res) => {
   res.status(200).render('healthcheck', {
     title: 'Health-check report',
     layout: 'layouts/page',

@@ -1,4 +1,6 @@
 import { Router } from 'express';
+import { serve, setup } from 'swagger-ui-express';
+import swaggerFile from '../swagger-output.json';
 import { createResponse } from '../helpers';
 import { errorHandlers } from '../middlewares';
 import { todoAPI } from '../services';
@@ -22,6 +24,9 @@ apiRouter.get('/', (req, res) => {
   });
   res.json(resObj);
 });
+
+// @swagger setup for API docs
+apiRouter.use('/docs', serve, setup(swaggerFile)); // swagger setup
 
 // @Lock: should be at last :: Router/route-404
 apiRouter.use('*', (req, res) => {

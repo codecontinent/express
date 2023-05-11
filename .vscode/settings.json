@@ -1,6 +1,8 @@
 {
   "cSpell.words": [
+    "Autogen",
     "dotenv",
+    "gendoc",
     "healthcheck",
     "linebreak",
     "middlewares",

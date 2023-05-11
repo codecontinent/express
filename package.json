@@ -7,13 +7,16 @@
   },
   "scripts": {
     "test": "cross-env NODE_ENV=test jest --watch",
-    "dev": "cross-env NODE_ENV=development nodemon --exec babel-node src/server.js",
-    "start:prod": "node dist/server.js",
+    "dev": "cross-env NODE_ENV=development nodemon --exec babel-node src/server",
+    "start:prod": "node dist/server",
     "prebuild": "yarn cleanup",
     "cleanup": "rimraf dist",
     "clean:all": "yarn cleanup; rimraf node_modules; rimraf *lock*",
-    "build": "cross-env NODE_ENV=production npx babel src --out-dir dist; cp -r src/views dist/",
-    "start": "cross-env NODE_ENV=production yarn babel-node src/server.js"
+    "build": "cross-env NODE_ENV=production yarn babel src --out-dir dist; cp -r src/views dist/",
+    "start": "cross-env NODE_ENV=production yarn babel-node src/server",
+    "postinstall": "cp .env.sample .env",
+    "gen": "yarn babel-node src/swagger",
+    "gen:w": "yarn babel-node src/swagger --watch"
   },
   "repository": "git@github.com:codecontinent/express.git",
   "author": "CodeContinent <codecontinent@gmail.com>",
@@ -31,7 +34,9 @@
     "hbs": "^4.2.0",
     "http-terminator": "^3.2.0",
     "mongoose": "^7.1.0",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "swagger-autogen": "^2.23.1",
+    "swagger-ui-express": "^4.6.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.21.5",

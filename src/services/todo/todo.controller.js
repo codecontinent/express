@@ -10,7 +10,7 @@ import { createResponse } from '../../helpers';
 
 const controller = Router();
 
-// create a todo
+// create a new todo
 controller.post('/', async (req, res) => {
   const { title } = req.body;
   const response = await addTodo({ title });
